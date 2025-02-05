@@ -1,0 +1,11 @@
+- name: download repo
+  hosts:
+    - _nginx_test_aws_06_fredrick
+    - ec2-3-239-211-38.compute-1.amazonaws.com
+  become: yes
+  roles:
+    - hostname
+    - mysql
+    - webserver
+    #- chron
+    #- test

@@ -1,0 +1,19 @@
+- name: download repo
+  shell: ' sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm  '
+  when: inventory_hostname == "ec2-3-239-211-38.compute-1.amazonaws.com"
+  ignore_errors: true
+- name: start repo
+  shell: ' sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y '
+  when: inventory_hostname == "ec2-3-239-211-38.compute-1.amazonaws.com"
+- name: do something to sql
+  shell: ' sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023'
+  when: inventory_hostname == "ec2-3-239-211-38.compute-1.amazonaws.com"
+- name: download mysql
+  shell: ' sudo dnf install mysql-community-client -y '
+  when: inventory_hostname == "ec2-3-239-211-38.compute-1.amazonaws.com"
+- name: download mysql2
+  shell: ' sudo dnf install mysql-community-server -y '
+  when: inventory_hostname == "ec2-3-239-211-38.compute-1.amazonaws.com"
+- name: start
+  shell: ' sudo systemctl start mysqld.service '
+  when: inventory_hostname == "ec2-3-239-211-38.compute-1.amazonaws.com"

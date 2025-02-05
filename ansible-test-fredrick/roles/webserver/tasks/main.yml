@@ -1,0 +1,11 @@
+- name: download the stuff
+  dnf:
+    name: "{{ hostvars[inventory_hostname]['tags'].Service }}-{{ hostvars[inventory_hostname]['tags'].Version}}"
+    state: present
+  when: inventory_hostname == "ec2-3-218-241-55.compute-1.amazonaws.com"
+- name: start and stuff
+  service:
+    name: "{{ webserver }}"
+    state: started
+    enabled: yes
+  when: inventory_hostname == "ec2-3-218-241-55.compute-1.amazonaws.com"

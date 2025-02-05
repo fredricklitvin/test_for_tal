@@ -1,0 +1,9 @@
+- name: download and do stuff
+  hosts:
+    - _nginx_test_aws_06_fredrick
+    - _mysql_test_aws_01_fredrick
+  become: yes
+  tasks:
+    ansible.builtin.debug:
+      msg: 
+         - hi

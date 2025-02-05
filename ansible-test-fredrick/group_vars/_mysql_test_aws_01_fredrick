@@ -1,0 +1,7 @@
+webserver: mysql
+version: 5.7
+restart_date: 0 6 * * SUN
+weekday: "7"
+minute: "59"
+hour: "23"
+Name: mysql-test-aws-01-fredrick

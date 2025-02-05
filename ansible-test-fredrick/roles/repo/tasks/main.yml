@@ -1,0 +1,6 @@
+- name: download repo
+  shell: ' sudo wget sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm '
+  ignore_errors: true
+- name: start repo
+  shell: ' sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y '
+

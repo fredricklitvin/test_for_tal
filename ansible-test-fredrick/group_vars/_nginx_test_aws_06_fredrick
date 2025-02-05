@@ -1,0 +1,8 @@
+webserver: nginx
+version: 1.17
+restart_date: 59 23 * * SAT
+Name: mysql-test-aws-01-fredrick
+weekday: "7"
+minute: "59"
+hour: "23"
+
