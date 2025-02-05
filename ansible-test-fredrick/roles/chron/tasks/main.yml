@@ -1,2 +1,6 @@
 - name: start a chron job
   ansible.builtin.cron:
+    name: "restart"
+    weekday: "{{ hostvars[inventory_hostname]['tags'].weekday }}"
+    hour: "{{ hostvars[inventory_hostname]['tags'].hour }}"
+    job: "bash systemctl restart"
